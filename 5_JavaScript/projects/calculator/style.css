@@ -1,0 +1,130 @@
+:root {
+  --borderBlack: 1px solid black;
+  --borderWhite: 1px solid white;
+  /* --border: 1px solid; */
+  --borderMid: 1px solid rgb(109, 151, 190);
+  --white: #fff;
+  --black: #000;
+  --red: rgb(255, 72, 0);
+  --green: #26e1bf;
+  --bgc: #292d36;
+  --grey: rgb(70, 97, 122);
+  --bg: #22252d;
+  --border-radius: 25px;
+  --shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px,
+    rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px,
+    rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  font-size: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
+}
+section {
+  width: 300px;
+  background-color: var(--bg);
+  height: 600px;
+  border-radius: 25px;
+  box-shadow: var(--shadow);
+}
+button:hover {
+  cursor: pointer;
+}
+/* nav */
+nav {
+  height: 20px;
+  width: 100%;
+}
+/* switch toggle */
+#toggle {
+  box-shadow: var(--shadow);
+  border: var(--borderMid);
+  display: inline-block;
+  margin: auto;
+  width: 50px;
+  border-radius: var(--border-radius);
+  background-color: var(--bgc);
+  padding: 1px;
+  display: flex;
+  position: relative;
+}
+#toggle:hover {
+  cursor: pointer;
+}
+
+#switchBtn {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: var(--grey);
+}
+
+#outputScreen {
+  height: 43%;
+  width: 90%;
+  margin: auto;
+}
+
+/* buttons */
+#buttons {
+  background-color: var(--bgc);
+  height: fit-content;
+  width: 100%;
+  border-radius: 25px;
+  box-shadow: var(--shadow);
+  display: grid;
+  align-items: center;
+  justify-content: space-evenly;
+  align-content: center;
+  justify-items: center;
+  padding: 10% 0px;
+}
+button {
+  background-color: var(--bg);
+  border-radius: 12px;
+  border: none;
+  width: 50px;
+  height: 50px;
+  margin: 5px;
+  font-size: 16px;
+  color: var(--white);
+}
+button:focus {
+  box-shadow: var(--shadow);
+  border: var(--borderWhite);
+}
+.row {
+  display: flex;
+  flex-direction: row;
+}
+.row button:last-child {
+  color: var(--red);
+}
+.operatorGreen button {
+  color: var(--green);
+}
+
+#outputScreen {
+  font-size: 40px;
+  text-align: right;
+}
+
+/* light mode */
+.lightMode {
+  color: var(--black);
+  background-color: var(--white);
+}
+
+.rightPosition {
+  position: relative;
+  left: 30px;
+}
