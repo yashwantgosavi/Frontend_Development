@@ -1,0 +1,17 @@
+what is object data types in javscript?
+what is the unique features of key? and in object types
+explain the js hashing/ hoisting.
+what is arrow function in javascript?
+what is function clousers?
+major difference in let, var or const?
+javascript is object oriented lagunge or not?
+what is pollymorphism in javascript
+function overwriting concept
+javascript is client side or server side?
+what is CGI programming? (common gateway interface)
+Is javascript interface concept?
+what is the object of class?
+what is promises in javscript?
+what is setInterval method in javascript?
+what is javscript data-structure concept?
+what is templateletteral?
