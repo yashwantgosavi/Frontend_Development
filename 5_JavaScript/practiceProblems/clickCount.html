@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Click Count</title>
+    <style>
+      .wrapper {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+        flex-wrap: nowrap;
+        margin-top: 35vh;
+      }
+
+      #box {
+        width: 100px;
+        height: 100px;
+        background-color: red;
+        margin: auto;
+        cursor: pointer;
+      }
+
+      body {
+        width: 100vw;
+        height: 100vh;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div id="box"></div>
+      <h1>Box Clicked <span id="click-count">0</span> Times</h1>
+    </div>
+
+    <script>
+      var box = document.getElementById("box");
+      var clickCount = document.getElementById("click-count");
+
+      function clickCounter() {
+        var i = 0;
+        box.addEventListener("click", function () {
+          i++;
+          clickCount.innerText = i;
+        });
+      }
+
+      clickCounter();
+    </script>
+  </body>
+</html>
