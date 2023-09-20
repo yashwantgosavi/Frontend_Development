@@ -1,0 +1,120 @@
+:root {
+  --white: white;
+  --black: #000000;
+  --blue-50: #0075f3;
+  --blue-40: #98b1c4;
+  --blue-30: #c8d7e3;
+  --blue-20: #cccccc;
+  --orange: #e15119;
+  --vw-100: 100vw;
+  --vh-100: 100vh;
+  --frameHeight: 852px;
+  --frameWidth: 393px;
+  --fontS-descri: 16px;
+  --fontH-descri: 32px;
+  --borderRadius: 25px;
+  --shadow-1: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  --fontF: "Roboto", sans-serif;
+
+  /* transitions */
+  --button-hover: all 0.3s;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap");
+
+* {
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: var(--fontF);
+  list-style: none;
+}
+body {
+  margin: 0;
+  width: var(--vw-100);
+  height: var(--vh-100);
+}
+
+p {
+  font-size: var(--fontS-descri);
+  font-family: var(--fontF);
+}
+/* main frame design */
+main {
+  height: var(--frameHeight);
+  width: var(--frameWidth);
+  border-radius: var(--borderRadius);
+  background-image: url(https://images.unsplash.com/photo-1421091242698-34f6ad7fc088?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80);
+  background-size: 330%;
+  background-repeat: no-repeat;
+  background-position: 45% 0%;
+  box-shadow: var(--shadow-1);
+  position: relative;
+  padding: 1rem;
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  height: var(--vh-100);
+}
+
+/* add task */
+#addTask {
+  height: 60px;
+  width: 60px;
+  border-radius: 18px;
+  background-color: var(--blue-50);
+  /* positing */
+  position: absolute;
+  bottom: 25px;
+  right: 40%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  font-size: var(--fontS-descri);
+  color: var(--white);
+}
+#addTask:hover {
+  box-shadow: var(--shadow-1);
+  cursor: pointer;
+  color: var(--white);
+  transition: var(--button-hover);
+}
+
+/* header design */
+header h2 {
+  color: var(--white);
+  font-weight: 400;
+  font-size: 30px;
+}
+
+#date{
+    font-size: var(--fontS-descri);
+    color: var(--white);
+}
+
+/* input task */
+input{
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: var(--borderRadius);
+    display: none;
+}
+.visible{
+    display: block !important; 
+}
+input:focus{
+    box-shadow: var(--shadow-1);
+    border: none !important;
+}
+form{
+    position: absolute;
+    bottom: 13%;
+    width: 92%;
+}
