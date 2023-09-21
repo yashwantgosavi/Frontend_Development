@@ -6,5 +6,5 @@ addTaskBtn.addEventListener("click", addTask);
 
 // Add Task
 function addTask() {
-  inputBox[0].classList.toggle("visible");
+  inputBox[0].style.display ='block';
 }

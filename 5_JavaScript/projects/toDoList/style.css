@@ -8,8 +8,8 @@
   --orange: #e15119;
   --vw-100: 100vw;
   --vh-100: 100vh;
-  --frameHeight: 852px;
-  --frameWidth: 393px;
+  --frameHeight: 85vh;
+  --frameWidth: 330px;
   --fontS-descri: 16px;
   --fontH-descri: 32px;
   --borderRadius: 25px;
@@ -115,6 +115,6 @@ input:focus{
 }
 form{
     position: absolute;
-    bottom: 13%;
+    bottom: 15%;
     width: 92%;
 }
