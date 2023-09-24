@@ -1,40 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
+
+<html>
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>To Do list Development</title>
-    <link rel="stylesheet" href="style.css" />
+    <title>Todo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
   </head>
   <body>
-    <!-- wrapper -->
-    <div class="wrapper">
-      <!-- main -->
-      <main>
-        <!-- header -->
-        <header>
-          <h2>My Day</h2>
-          <div id="date"></div>
-        </header>
-        <!-- task list -->
-        <ul>
-          <li></li>
-        </ul>
-
-        <!-- Input tasks -->
-        <form action="">
-          <input type="text" placeholder="Type your TODO list" />
-        </form>
-        <!-- add task -->
-        <section id="addTask"><i class="fa-solid fa-plus"></i></section>
-      </main>
+    <h1>Todo List App</h1>
+    <div id="container">
+      <input placeholder="Add a task" class="add-task" id="add" data-helloWord="asdasdas"/>
+      <span id="total-tasks">Total tasks: <span id="tasks-counter">0</span></span>
+      <ul id="list">
+        <li>
+          <input type="checkbox" id="task1" data-id="12" class="custom-checkbox">
+          <label for="task1">Buy groceries</label>
+          <img src="bin.svg" class="delete" data-id="12" />
+        </li>
+      </ul>
     </div>
-
-    <script
-      src="https://kit.fontawesome.com/b3348ae33f.js"
-      crossorigin="anonymous"
-    ></script>
-    <script src="index.js"></script>
+    <script src="todo.js"></script>
   </body>
 </html>
