@@ -12,14 +12,31 @@ function renderList() {
   for (const task of tasks) {
     const li = document.createElement("li");
     li.innerHTML = `
-      <input type="checkbox" id="${task.id}" class="custom-checkbox" data-id="${task.id}" ${task.done ? "checked" : ""}>
+      <input type="checkbox" id="${task.id}" class="custom-checkbox" data-id="${
+      task.id
+    }" ${task.completed ? "checked" : ""}>
       <label for="${task.id}">${task.text}</label>
       <img src="bin.svg" class="delete" data-id="${task.id}" />
     `;
-    li.querySelector("input").addEventListener("change", () => toggleTask(task.id));
-    li.querySelector(".delete").addEventListener("click", () => deleteTask(task.id));
+    li.querySelector("input").addEventListener("change", () =>
+      toggleTask(task.id)
+    );
+    li.querySelector(".delete").addEventListener("click", () =>
+      deleteTask(task.id)
+    );
     taskList.appendChild(li);
   }
+}
+
+function fetchTodos() {
+  fetch("https://jsonplaceholder.typicode.com/todos")
+    .then(function (response) {
+      console.log(reponse);
+      return response.json();
+    })
+    .then(function (data) {
+      console.log(data);
+    });
 }
 
 function toggleTask(taskId) {
@@ -71,4 +88,10 @@ function handleInputKeyPress(e) {
   }
 }
 
+function intializeApp() {
+  fetchTodos();
+  addTaskInput.addEventListener("keyup", handleInputKeyPress);
+  document.addEventListener("click", handleClickListener);
+}
+intializeApp();
 addTaskInput.addEventListener("keyup", handleInputKeyPress);
