@@ -1,0 +1,15 @@
+body,main {
+  margin: 0;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+.ball {
+  height: 80px;
+  width: 80px;
+  background-color: greenyellow;
+  border-radius: 50%;
+}
+main{
+    margin: 2%;
+}
