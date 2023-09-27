@@ -4,3 +4,16 @@
 // A checkbox to check the item off the list. (checked item should stay in the list, with some differentiation from rest of the todo items)
 // Total number of tasks in the list.
 // Extra points for creativity (think about user accessibility, some animations and things like that)
+  
+
+
+// all variables
+const tasks = [];
+var taskCount;
+var writeTask =document.getElementById
+var addTasks;
+
+
+
+
+

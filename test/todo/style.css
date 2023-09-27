@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
 
 /* Root */
 :root {
@@ -7,12 +7,16 @@
   --orange: #ef8555;
   --red: #be375f;
   --voilet: #60246c;
-  --grey: #3b3b3e;
-  --black: #212226;
+  --lightGrey: #ebebeb;
+  --grey: #585858;
+  --blue: #4044c9;
+  --black: #303442;
   --white: #fefff2;
-  --descriptionFont: "Lato", sans-serif;
+  --descriptionFont: "Roboto", sans-serif;
   --borderRadius: 25px;
-  --borderRadius-sm: 8px;
+  --borderRadius-sm: 14px;
+  --box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.4),
+    0px 7px 13px -3px rgba(0, 0, 0, 0.3), 0px -3px 0px inset rgba(0, 0, 0, 0.2);
 }
 
 /* common CSS */
@@ -25,30 +29,27 @@ body {
   overflow: hidden;
   height: 100vh;
   width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--lightGrey);
 }
 
 /* custom css */
 main {
-  width: 25%;
-  height: 90%;
+  width: 350px;
+  height: 665px;
   border-radius: var(--borderRadius);
-  background-color: var(--white);
-  border: 1px solid grey;
+  background-color: var(--blue);
   position: relative;
-}
-body div:first-child {
-  height: 100%;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  box-shadow: var(--box-shadow);
 }
 .wrapper {
   padding: 5%;
 }
 
 h1 {
-  color: var(--black);
+  color: var(--lightGrey);
   text-align: center;
   font-weight: bold;
   font-size: 24px;
@@ -59,22 +60,19 @@ nav {
   z-index: 100;
   position: relative;
 }
-
-.allTaskCount {
-  background-color: var(--black);
-  height: 45px;
-  width: 100%;
+.btn {
+  background-color: var(--white);
   border-radius: var(--borderRadius-sm);
-  margin: 1rem 0px;
+  width: fit-content;
+  padding: 10px;
+}
+.allTaskCount {
   display: flex;
+  flex-direction: row;
   flex-wrap: nowrap;
   justify-content: space-between;
   align-items: center;
-  font-size: 14px;
-  padding: 10px;
-  color: var(--white);
 }
-
 #addTask {
   background-color: var(--white);
   height: 45px;
@@ -87,29 +85,80 @@ nav {
 }
 nav h3 {
   display: inline;
+  color: var(--black);
+  font-size: 16px;
+}
+.w-48 {
+  width: 48%;
 }
 
-/* blur buttons*/
-.blur-1,.blur-2 {
-  width: 60px;
-  height: 60px;
-  position: absolute;
-  background-color: var(--voilet);
-  filter: blur(50px);
-  border-radius: 50%;
-  z-index: 1;
-  clip: rect(-80px, 120px, 200px, 20px);
-  left: -20px;
-  top: 80px;
+form {
+  margin: 15px 0px;
+  display: flex;
+}
+form button {
+  width: 55px;
+  height: 45px;
+  margin-left: 15px;
+  border-radius: var(--borderRadius-sm);
+  background-color: var(--white);
+  border: none;
+}
+button:hover {
+  cursor: pointer;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.4);
+}
+input {
+  padding: 0px 15px;
+}
+input i {
+  box-shadow: var(--box-shadow);
+}
+input[type="text"]:focus {
+  box-shadow: var(--box-shadow);
+  transition: all 0.5s;
+  border: none;
+  outline: none;
+}
+/* tasklist ui */
+#taskList {
+  height: 67%;
+  background-color: var(--white);
+  border-radius: 25px 0px 25px 25px;
+  box-shadow: 0px -3px 0px inset rgba(0, 0, 0, 0.2);
 }
 
-
-.blur-2{
-  background-color: var(--orange);
-  left: 324px;
-  top: 170px;
-  clip: rect(-100px, 60px, 200px, -60px);
-
+ul {
+  list-style: none;
+  padding-left: 0px;
+}
+li {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+  background-color: var(--lightGrey);
+  border-radius: var(--borderRadius-sm);
+  padding: 0px 15px;
+  margin: 15px;
+  color: var(--black);
+}
+h4 {
+  margin: 15px;
+}
+input[type="radio"] {
+  height: 15px;
+  width: 15px;
+  background-color: var(--blue);
+}
+input[type="radio"]:hover {
+  cursor: pointer;
+}
+input[type="radio"]:checked::before{
+background-color: var(--blue);
 }
 
-https://in.pinterest.com/pin/303500462397205976/
+a {
+  color: var(--blue);
+}

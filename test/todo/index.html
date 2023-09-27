@@ -8,36 +8,51 @@
   </head>
   <body>
     <!-- wrapper -->
-    <div>
-      <!-- frame -->
-      <main>
-        <!-- Task Updates -->
-        <nav class="wrapper">
-          <h1>My TODO List</h1>
+
+    <!-- frame -->
+    <main>
+      <!-- Task Updates -->
+      <nav class="wrapper">
+        <h1>My TO-DO List</h1>
+
+        <div class="allTaskCount">
           <!-- all tasks count -->
-          <div class="allTaskCount">
+          <div class="btn w-48">
             <h3>All Tasks : <span></span></h3>
-            <h3>Completed Tasks : <span></span></h3>
           </div>
           <!-- completed Task count -->
-          <div>
-            <form action="">
-              <input type="text" name="" id="addTask" placeholder="Add your task here"/>
-            </form>
+          <div class="btn w-48">
+            <h3>Done Tasks : <span></span></h3>
           </div>
-        </nav>
-        <section>
-          <!-- add new tasks -->
-          <header></header>
-          <!-- all tasks list -->
-          <section></section>
-        </section>
+        </div>
+        <!-- add new tasks -->
+        <form action="">
+          <input
+            type="text"
+            name=""
+            id="addTask"
+            placeholder="Add your task here"
+          />
+          <button><i class="fa-solid fa-plus"></i></button>
+        </form>
+      </nav>
+      <section class="wrapper" id="taskList">
+        <!-- all tasks list -->
+          <ul>
+            <li>
+              <input type="radio" id="doneTask" name="done" />
+              <h4>Shopping Grocery</h4>
+              <a href="#"><i class="fa-solid fa-trash"></i></a>
+            </li>
+          </ul>
+      </section>
+    </main>
 
-        <!-- blur -->
-        <div class="blur-1"></div>
-        <div class="blur-2"></div>
-      </main>
-    </div>
+    <!-- scripts -->
+    <script
+      src="https://kit.fontawesome.com/b3348ae33f.js"
+      crossorigin="anonymous"
+    ></script>
     <script src="index.js" type="text/javascript"></script>
   </body>
 </html>
