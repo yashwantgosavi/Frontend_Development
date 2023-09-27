@@ -1,0 +1,96 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,400&display=swap");
+
+/* Root */
+:root {
+  /* colors */
+  --yellow: #f5ec6d;
+  --orange: #ef8555;
+  --red: #be375f;
+  --voilet: #60246c;
+  --grey: #3b3b3e;
+  --black: #212226;
+  --white: #fefff2;
+  --descriptionFont: "Lato", sans-serif;
+  --borderRadius: 25px;
+  --borderRadius-sm: 8px;
+}
+
+/* common CSS */
+* {
+  box-sizing: border-box;
+  font-family: var(--descriptionFont);
+}
+body {
+  margin: 0;
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+}
+
+/* custom css */
+main {
+  width: 25%;
+  height: 90%;
+  border-radius: var(--borderRadius);
+  background-color: var(--black);
+  position: relative;
+}
+body div:first-child {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.wrapper {
+  padding: 5%;
+}
+
+h1 {
+  color: var(--white);
+  text-align: center;
+  font-weight: 500;
+  font-size: 24px;
+}
+nav {
+  height: 100px;
+  padding-top: 5px;
+  border-radius: 25px 25px 0px 0px;
+}
+
+nav div {
+  background-color: var(--grey);
+  height: 45px;
+  width: 100%;
+  border-radius: var(--borderRadius-sm);
+  margin: 1rem 0px;
+}
+
+nav .allTaskCount {
+  backdrop-filter: blur(10px);
+}
+#addTask {
+  background-color: var(--grey);
+  height: 45px;
+  width: 100%;
+  border-radius: var(--borderRadius-sm);
+  border: none;
+}
+#addTask:focus-visible {
+  border-color: #60246c;
+}
+nav h3 {
+  display: inline;
+}
+
+/* blur buttons*/
+.blur-1{
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    background-color: var(--voilet);
+    filter: blur(10px);
+    border-radius: 50%;
+    -webkit-background-clip:content-box;
+    -webkit-text-fill-color: transparent;
+}
