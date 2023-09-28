@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TO DO list</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="style.css" type="text/css" />
   </head>
   <body>
@@ -14,19 +15,18 @@
       <!-- Task Updates -->
       <nav class="wrapper">
         <h1>My TO-DO List</h1>
-
-        <div class="allTaskCount">
+        <div class="allTask">
           <!-- all tasks count -->
           <div class="btn w-48">
-            <h3>All Tasks : <span></span></h3>
+            <h3>All Tasks : <span id="allTaskCount"></span></h3>
           </div>
           <!-- completed Task count -->
           <div class="btn w-48">
-            <h3>Done Tasks : <span></span></h3>
+            <h3>Done Tasks : <span id="completedTask"></span></h3>
           </div>
         </div>
         <!-- add new tasks -->
-        <form action="">
+        <div class="takingInput">
           <input
             type="text"
             name=""
@@ -34,16 +34,16 @@
             placeholder="Add your task here"
           />
           <button><i class="fa-solid fa-plus"></i></button>
-        </form>
+        </div>
       </nav>
       <section class="wrapper" id="taskList">
         <!-- all tasks list -->
           <ul>
-            <li>
+            <!-- <li>
               <input type="radio" id="doneTask" name="done" />
               <h4>Shopping Grocery</h4>
               <a href="#"><i class="fa-solid fa-trash"></i></a>
-            </li>
+            </li> -->
           </ul>
       </section>
     </main>

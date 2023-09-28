@@ -66,7 +66,7 @@ nav {
   width: fit-content;
   padding: 10px;
 }
-.allTaskCount {
+.allTask {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -92,11 +92,11 @@ nav h3 {
   width: 48%;
 }
 
-form {
+.takingInput{
   margin: 15px 0px;
   display: flex;
 }
-form button {
+button {
   width: 55px;
   height: 45px;
   margin-left: 15px;
