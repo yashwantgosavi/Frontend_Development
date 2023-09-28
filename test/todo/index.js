@@ -11,7 +11,7 @@
 const tasks = [];
 var taskCount;
 var writeTask =document.getElementById
-var addTasks;
+// var addTasks;
 
 
 
