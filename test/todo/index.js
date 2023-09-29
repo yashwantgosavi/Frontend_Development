@@ -12,12 +12,31 @@ const allTasks = document.getElementById("allTaskCount");
 const done = document.getElementById("completedTask");
 const deleteTask = document.querySelector("li a");
 const check = document.querySelector('input[type="radio"]');
-add.addEventListener("click", inputTask);
+input.addEventListener("keyup", takeInput);
+// add.addEventListener("click", );
 
 // for taking inputs from users
-function inputTask(e) {
-    
+function takeInput(e) {
+  if (e.key === "Enter") {
+    const taskText = e.target.value;
+    console.log(taskText);
+    if (!taskText) {
+      notification("Type the task");
+      return;
+    }
+    const taskId = {
+      text: taskText,
+      id: Date.now().toString(),
+      done: false,
+    };
+    e.target.value = " ";
+    addTasks(taskId);
+  }
 }
+
+
+
+
 
 // adding a task
 function addTasks(taskId) {}
@@ -34,5 +53,17 @@ function allTasksCount() {}
 // here we will take care about completed tasks counts
 function completedTasksCount() {}
 
-// 
-function showNotification(text) {}
+//
+function notification(text) {}
+
+function addTasks(taskId) {}
+
+function deleteTasks() {}
+
+function completedTasks() {}
+
+function allTasksCount() {}
+
+function completedTasksCount() {}
+
+function notification(text) {}
