@@ -5,65 +5,77 @@
 // Total number of tasks in the list.
 // Extra points for creativity (think about user accessibility, some animations and things like that)
 
-const tasks = [];
+let tasks = [];
 const input = document.querySelector('input[type="text"]');
 const add = document.querySelector("button");
 const allTasks = document.getElementById("allTaskCount");
 const done = document.getElementById("completedTask");
 const deleteTask = document.querySelector("li a");
 const check = document.querySelector('input[type="radio"]');
-input.addEventListener("keyup", takeInput);
-// add.addEventListener("click", );
 
-// for taking inputs from users
-function takeInput(e) {
-  if (e.key === "Enter") {
-    const taskText = e.target.value;
-    console.log(taskText);
+input.addEventListener("keyup", inputTasks);
+
+function inputTasks(i) {
+  // when user will click enter this code will take a input value
+  if (i.key == "Enter") {
+    const taskText = i.target.value;
+    // if there is not any text then alert to user for inputing a task
     if (!taskText) {
-      notification("Type the task");
+      notification("Enter the task");
       return;
     }
-    const taskId = {
+    const tasks = {
       text: taskText,
       id: Date.now().toString(),
       done: false,
     };
-    e.target.value = " ";
-    addTasks(taskId);
+
+    i.target.value = " ";
+    addTask(tasks);
+
+    console.log(taskText);
   }
+}
+
+function addTask(task) {
+  if (task) {
+    tasks.push(task);
+    notification("task is added in array");
+    return;
+  }
+  notification("task is not added in array");
+}
+
+function deleteTasks(tasksId){
+  const newTasks = tasks.filter(function(task){
+    return task.id !== tasksId;
+  });
+  tasks = newTasks;
+  displayTasks();
+  notification('Task is deleted');
+}
+
+function markCompletedTask(tasksId){
+  const tasks = tasks.filter(function(task){
+    return task.id === tasksId;
+  });
+  if(tasks.length>0){
+    let currentTask =tasks[0];
+
+    currentTask.done = !currentTask.done;
+    notification('completed tasks is marked');
+    checkList();
+    return;
+    }
+    notification('completed tasks is not marked');
 }
 
 
 
 
+// for getting all types of notifications
+function notification(message) {
+  alert(message);
+}
 
-// adding a task
-function addTasks(taskId) {}
 
-// for deleting a tasks.
-function deleteTasks() {}
-
-// when user will click on the radio button the task will add in completed task list
-function completedTasks() {}
-
-// here We will take care of alltaskcount
-function allTasksCount() {}
-
-// here we will take care about completed tasks counts
-function completedTasksCount() {}
-
-//
-function notification(text) {}
-
-function addTasks(taskId) {}
-
-function deleteTasks() {}
-
-function completedTasks() {}
-
-function allTasksCount() {}
-
-function completedTasksCount() {}
-
-function notification(text) {}
