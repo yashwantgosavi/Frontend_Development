@@ -46,36 +46,51 @@ function addTask(task) {
   notification("task is not added in array");
 }
 
-function deleteTasks(tasksId){
-  const newTasks = tasks.filter(function(task){
+function deleteTasks(tasksId) {
+  const newTasks = tasks.filter(function (task) {
     return task.id !== tasksId;
   });
   tasks = newTasks;
   displayTasks();
-  notification('Task is deleted');
+  notification("Task is deleted");
 }
 
-function markCompletedTask(tasksId){
-  const tasks = tasks.filter(function(task){
+function markCompletedTask(tasksId) {
+  const tasks = tasks.filter(function (task) {
     return task.id === tasksId;
   });
-  if(tasks.length>0){
-    let currentTask =tasks[0];
+  if (tasks.length > 0) {
+    let currentTask = tasks[0];
 
     currentTask.done = !currentTask.done;
-    notification('completed tasks is marked');
+    notification("completed tasks is marked");
     checkList();
     return;
-    }
-    notification('completed tasks is not marked');
+  }
+  notification("completed tasks is not marked");
+}
+function addTaskToDOM(tasks) {
+  const li = document.createElement("li");
+
+  li.innerHTML = `
+            <li>
+              <input type="radio" id="${tasks.id}" name="done" data-id="${tasks.id}"/>
+              <h4 for="${tasks.id}">${tasks.id}</h4>
+              <a href="#" data-id="${tasks.id}"><i class="fa-solid fa-trash"></i></a>
+            </li>
+  `;
+  tasksList.append(li);
 }
 
-
-
+function checkList() {
+  taskList.innerHTML = " ";
+  for (let i = 0; i < tasks.length; i++) {
+    addTaskToDOM(tasks[i]);
+  }
+  taskCounter.innerHTML = tasks.length;
+}
 
 // for getting all types of notifications
 function notification(message) {
   alert(message);
 }
-
-
