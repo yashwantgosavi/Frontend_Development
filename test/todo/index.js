@@ -8,7 +8,7 @@
 let tasks = [];
 const input = document.querySelector('input[type="text"]');
 const add = document.querySelector("button");
-const label = document.getElementsByTagName("li");
+const label = document.getElementsByTagName("label");
 const taskList = document.getElementById("taskList");
 const doneTask = document.getElementsByClassName("doneTask");
 const taskCounter = document.getElementById("taskCounter");
@@ -49,55 +49,44 @@ function deleteTasks(tasksId) {
   updateTaskCount();
 }
 
+// function markCompletedTask(tasksId) {
+//   const taskIndex = tasks.findIndex(function (task) {
+//     return task.id === tasksId;
+//   });
+//   if (taskIndex > -1) {
+//     tasks[taskIndex].done = !tasks[taskIndex].done;
+//     notification("marked as a completed task");
+//     for (let i = 0; i < taskIndex.length; i++) {
+//       const taskItem = taskIndex[i];
+//       taskItem.addEventListener("click", function () {
+//         // const tasksId = taskIndex;
+//         label.className += " " + "linethrow";
+//       });
+//     }
+//     checkList();
+//   } else {
+//     notification("Completed tasks are not marked");
+//   }
+// }
+
 function markCompletedTask(tasksId) {
   const taskIndex = tasks.findIndex(function (task) {
     return task.id === tasksId;
   });
-
   if (taskIndex > -1) {
     tasks[taskIndex].done = !tasks[taskIndex].done;
     notification("marked as a completed task");
+    const taskItem = document.querySelector(`[data-id="${tasksId}"]`);
+    taskItem.addEventListener("click", function () {
+      label.className += " " + "linethrow";
+    });
     checkList();
   } else {
     notification("Completed tasks are not marked");
   }
-
-  for (let i = 0; i < taskIndex.length; i++) {
-    const taskItem = taskIndex[i];
-    taskItem.addEventListener("click", function () {
-      // const tasksId = taskIndex;
-      taskList_li.className += " " + "linethrow";
-    });
-  }
 }
-function markCompletedTask(tasksId) {
-  const taskIndex = tasks.findIndex(function (task) {
-    return task.id === tasksId;
-  });
 
-  if (taskIndex > -1) {
-    let checkbox = document.querySelector('input[type="checkbox"]');
 
-    if (checkbox) {
-      checkbox.addEventListener("click", function () {
-        if (checkbox.checked) {
-          checkbox.classList.add("linethrow");
-        } else {
-          checkbox.classList.remove("linethrow");
-        }
-      });
-
-      checkbox.checked = !checkbox.checked;
-      tasks[taskIndex].done = !tasks[taskIndex].done;
-      notification("marked as a completed task");
-      checkList();
-    } else {
-      notification("No checkbox found");
-    }
-  } else {
-    notification("Completed tasks is not marked");
-  }
-}
 
 function addTaskToDOM(task) {
   const li = document.createElement("li");
