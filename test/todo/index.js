@@ -8,8 +8,9 @@
 let tasks = [];
 const input = document.querySelector('input[type="text"]');
 const add = document.querySelector("button");
+const label = document.getElementsByTagName("li");
 const taskList = document.getElementById("taskList");
-const taskList_li = document.getElementsByTagName("li");
+const doneTask = document.getElementsByClassName("doneTask");
 const taskCounter = document.getElementById("taskCounter");
 input.addEventListener("keyup", inputTasks);
 
@@ -48,8 +49,6 @@ function deleteTasks(tasksId) {
   updateTaskCount();
 }
 
-
-
 function markCompletedTask(tasksId) {
   const taskIndex = tasks.findIndex(function (task) {
     return task.id === tasksId;
@@ -59,30 +58,42 @@ function markCompletedTask(tasksId) {
     tasks[taskIndex].done = !tasks[taskIndex].done;
     notification("marked as a completed task");
     checkList();
-  }   
-  else {
+  } else {
     notification("Completed tasks are not marked");
   }
 
   for (let i = 0; i < taskIndex.length; i++) {
     const taskItem = taskIndex[i];
-    taskItem.addEventListener('click', function () {
+    taskItem.addEventListener("click", function () {
       // const tasksId = taskIndex;
       taskList_li.className += " " + "linethrow";
     });
   }
 }
-
-
 function markCompletedTask(tasksId) {
   const taskIndex = tasks.findIndex(function (task) {
     return task.id === tasksId;
   });
+
   if (taskIndex > -1) {
-    tasks[taskIndex].done = !tasks[taskIndex].done;
-    taskList.className += " "+"linethrow"
-    notification("marked as a completed task");
-    checkList();
+    let checkbox = document.querySelector('input[type="checkbox"]');
+
+    if (checkbox) {
+      checkbox.addEventListener("click", function () {
+        if (checkbox.checked) {
+          checkbox.classList.add("linethrow");
+        } else {
+          checkbox.classList.remove("linethrow");
+        }
+      });
+
+      checkbox.checked = !checkbox.checked;
+      tasks[taskIndex].done = !tasks[taskIndex].done;
+      notification("marked as a completed task");
+      checkList();
+    } else {
+      notification("No checkbox found");
+    }
   } else {
     notification("Completed tasks is not marked");
   }
@@ -91,11 +102,15 @@ function markCompletedTask(tasksId) {
 function addTaskToDOM(task) {
   const li = document.createElement("li");
   li.innerHTML = `
-
-    
-              <input type="checkbox" id="${task.id}" name="done" ${task.done ? 'checked': ''} onclick="markCompletedTask('${task.id}')"/>
+              <input class="doneTask" type="checkbox" id="${
+                task.id
+              }" name="done" ${
+    task.done ? "checked" : ""
+  } onclick="markCompletedTask('${task.id}')"/>
               <label for="${task.id}">${task.text}</label>
-              <a href="#" data-id="${task.id}" onclick="deleteTasks('${task.id}')"><i class="fa-solid fa-trash"></i></a>
+              <a href="#" data-id="${task.id}" onclick="deleteTasks('${
+    task.id
+  }')"><i class="fa-solid fa-trash"></i></a>
        
   `;
   taskList.append(li);
@@ -105,7 +120,7 @@ function addTaskToDOM(task) {
 // here we will print all the task
 function updateTaskCount() {
   const liElements = document.querySelectorAll("li");
- taskCounter.textContent = liElements.length;
+  taskCounter.textContent = liElements.length;
 }
 
 function checkList() {
@@ -119,4 +134,3 @@ function checkList() {
 function notification(message) {
   alert(message);
 }
-

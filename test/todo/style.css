@@ -119,19 +119,30 @@ input[type="text"]:focus {
   transition: all 0.5s;
   border: none;
   outline: none;
+  box-shadow: 0px -3px 0px inset rgba(0, 0, 0, 0.2);
 }
 /* tasklist ui */
 #taskList {
-  height: 67%;
+  height: 376px;
+}
+section{
   background-color: var(--white);
   border-radius: 25px 0px 25px 25px;
-  box-shadow: 0px -3px 0px inset rgba(0, 0, 0, 0.2);
 }
-
 ul {
   list-style: none;
   padding-left: 0px;
+  overflow-y: scroll;
 }
+ul::-webkit-scrollbar {
+  width: 0.2em;
+}
+ul::-webkit-scrollbar-thumb {
+  background-color: rgb(229, 229, 229);
+  outline: 1px solid rgb(228, 228, 228);
+  border-radius: 10px;
+}
+
 li {
   display: flex;
   flex-direction: row;
