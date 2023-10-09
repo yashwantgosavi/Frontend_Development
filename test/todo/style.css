@@ -140,7 +140,7 @@ li {
   flex-wrap: nowrap;
   background-color: var(--lightGrey);
   border-radius: var(--borderRadius-sm);
-  padding: 0px 15px;
+  padding:15px;
   margin: 15px;
   color: var(--black);
 }
@@ -161,4 +161,7 @@ background-color: var(--blue);
 
 a {
   color: var(--blue);
+}
+.linethrow{
+text-decoration: line-through;
 }
