@@ -24,6 +24,11 @@
   box-sizing: border-box;
   font-family: var(--descriptionFont);
 }
+img{
+  width: 15px;
+  height: 15px;
+  color: var(--blue);
+}
 body {
   margin: 0;
   overflow: hidden;
@@ -173,6 +178,6 @@ background-color: var(--blue);
 a {
   color: var(--blue);
 }
-.linethrow{
+.completed{
 text-decoration: line-through;
 }

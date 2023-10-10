@@ -20,8 +20,6 @@ A todo list app
 	- renderTodosList
 	- showNotification
 
-
-
 - input: user will input the todo
 			- if user press enter --> todo stored in input arry
 			- if user clicked on add --^
